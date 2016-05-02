@@ -5,7 +5,12 @@ class NavbarController {
   menu = [{
     'title': 'Home',
     'state': 'main'
-  }];
+  },
+  {
+    'title': 'Products',
+    'state': 'products'
+  },
+];
 
   isCollapsed = true;
   //end-non-standard
