@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: products', function () {
+describe('Service: Product', function () {
 
   // load the service's module
   beforeEach(module('beer2App.products'));
@@ -8,11 +8,11 @@ describe('Service: products', function () {
   // instantiate service
   var products;
   beforeEach(inject(function (_products_) {
-    products = _products_;
+    Products = _Product_;
   }));
 
   it('should do something', function () {
-    expect(!!products).toBe(true);
+    expect(!!Product).toBe(true);
   });
 
 });
