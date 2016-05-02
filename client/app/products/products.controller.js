@@ -4,7 +4,7 @@
 class ProductsComponent {
   constructor($scope, Product) {
     this.message = 'Hello';
-    $scope.products= Product;
+    $scope.products= Product.query();
     console.log($scope.products);
   }
 }
