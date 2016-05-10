@@ -20,6 +20,9 @@ class MainController {
       this.socket.syncUpdates('thing', this.awesomeThings);
     });
   }
+  message() {
+    console.log(this.awesomeThings)
+  }
 
   addThing() {
     if (this.newThing) {
