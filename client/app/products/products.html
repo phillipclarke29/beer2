@@ -1,15 +1,26 @@
-<div>This is the products view.</div>
 
-<button type="submit" ng-click="$ctrl.message()">clickme</button>
-{{$ctrl.number}}
-<p class="input-group">
-  <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="$ctrl.newThing">
-  <span class="input-group-btn">
-    <button type="submit" class="btn btn-primary" ng-click="$ctrl.message()">Add New</button>
-  </span>
-    <span ng-repeat="data in $ctrl.data">
-{{data.title}}</span>
-  <input type="number" class="form-control" placeholder="Add a new thing here." ng-model="$ctrl.newNumber">
-  <span class="input-group-btn">
-    <button type="submit" class="btn btn-primary" ng-click="$ctrl.addNumber($ctrl.newNumber)">Add New</button>
-  </span>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-6 col-md-4" ng-show ="$ctrl.products.length <1">
+      No products to show </div>
+
+      <div class = "col-sm-6 col-md-4" ng-repeat="product in $ctrl.products">
+        <div class="thumbnail">
+          <img src="http://placehold.it/300x200" alt="{{product}}">
+            <div class ="caption">
+              <h3> {{product.title}}</h3>
+              <p> {{product.description | limitTo: 100}} ..</p>
+              <p> {{product.price | currency:"£"}} </p>
+              <p>
+                <a href="#" class="btn btn-primary" role = "button">buy</a>
+                <a ui-sref="viewProduct({id: product._id})"
+                class="btn btn-default" role="button">Details</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
