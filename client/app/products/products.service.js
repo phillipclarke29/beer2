@@ -48,6 +48,21 @@ angular.module('beer2App')
 
         }, result);
         return result.product;
+      },
+
+      delete: function(params) {
+        angular.forEach(example_products, function(product, index) {
+          if (product._id == params._id) {
+            console.log(product, index);
+            example_products.splice(index, 1);
+            return
+          }
+
+        })
+      },
+      create: function(product) {
+        product._id = ++last._id;
+        example_products.push(product);
       }
     }
 
