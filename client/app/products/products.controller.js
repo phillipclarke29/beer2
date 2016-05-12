@@ -3,7 +3,7 @@
 
   class ProductsComponent {
     constructor(Product) {
-      this.products = Product.data();
+      this.products = Product.query();
     }
   }
 
