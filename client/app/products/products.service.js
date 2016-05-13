@@ -63,9 +63,19 @@ angular.module('beer2App')
       create: function(product) {
         product._id = ++last._id;
         example_products.push(product);
+      },
+
+      update: function(product) {
+        var item = this.get(product);
+        if (!item) return false;
+
+        item.title = product.title;
+        item.price = product.price;
+        item.quantity = product.quantity;
+        item.description = product.description;
+        return true;
+
       }
     }
-
-
 
   });
